@@ -282,6 +282,17 @@ default['openstack']['endpoints']['compute-novnc']['port'] = '6080'
 default['openstack']['endpoints']['compute-novnc']['path'] = '/vnc_auto.html'
 default['openstack']['endpoints']['compute-novnc']['bind_interface'] = nil
 
+# The OpenStack Compute (Nova) html5proxy endpoint
+default['openstack']['endpoints']['compute-html5proxy-bind']['host'] = node['openstack']['endpoints']['bind-host']
+default['openstack']['endpoints']['compute-html5proxy-bind']['port'] = '6082'
+default['openstack']['endpoints']['compute-html5proxy-bind']['bind_interface'] = node['openstack']['endpoints']['bind_interface']
+
+default['openstack']['endpoints']['compute-html5proxy']['host'] = node['openstack']['endpoints']['host']
+default['openstack']['endpoints']['compute-html5proxy']['scheme'] = 'http'
+default['openstack']['endpoints']['compute-html5proxy']['port'] = '6082'
+default['openstack']['endpoints']['compute-html5proxy']['path'] = '/spice_auto.html'
+default['openstack']['endpoints']['compute-html5proxy']['bind_interface'] = nil
+
 # The OpenStack Compute (Nova) vnc endpoint
 default['openstack']['endpoints']['compute-vnc-bind']['host'] = node['openstack']['endpoints']['bind-host']
 default['openstack']['endpoints']['compute-vnc-bind']['bind_interface'] = node['openstack']['endpoints']['bind_interface']
@@ -291,6 +302,16 @@ default['openstack']['endpoints']['compute-vnc']['scheme'] = nil
 default['openstack']['endpoints']['compute-vnc']['port'] = nil
 default['openstack']['endpoints']['compute-vnc']['path'] = nil
 default['openstack']['endpoints']['compute-vnc']['bind_interface'] = nil
+
+# The OpenStack Compute (Nova) spice endpoint
+default['openstack']['endpoints']['compute-spice-bind']['host'] = node['openstack']['endpoints']['bind-host']
+default['openstack']['endpoints']['compute-spice-bind']['bind_interface'] = node['openstack']['endpoints']['bind_interface']
+
+default['openstack']['endpoints']['compute-spice']['host'] = node['openstack']['endpoints']['host']
+default['openstack']['endpoints']['compute-spice']['scheme'] = nil
+default['openstack']['endpoints']['compute-spice']['port'] = nil
+default['openstack']['endpoints']['compute-spice']['path'] = nil
+default['openstack']['endpoints']['compute-spice']['bind_interface'] = nil
 
 # The OpenStack Compute (Nova) vnc proxy endpoint
 default['openstack']['endpoints']['compute-vnc-proxy-bind']['host'] = node['openstack']['endpoints']['compute-vnc-bind']['host']
